@@ -9,4 +9,3 @@
 - install git and check commit
 - install Postman
 - complete Springboot tutorials by Joachim Prinzbach as shown in https://confluence.baloisenet.com/atlassian/pages/viewpage.action?pageId=1840186564
- 
