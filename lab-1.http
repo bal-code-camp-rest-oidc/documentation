@@ -1,0 +1,22 @@
+### Userinfo
+
+# curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=client_credentials&client_id=library-client&client_secret=9584640c-3804-4dcd-997b-93593cfb9ea7" http://localhost:8080/auth/realms/workshop/protocol/openid-connect/token
+POST http://localhost:8080/auth/realms/workshop/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=client_credentials&client_id=library-client&client_secret=9584640c-3804-4dcd-997b-93593cfb9ea7
+
+###
+
+
+
+### RO
+
+# curl -X POST -H "Content-Type: application/x-www-form-urlencoded" -d "grant_type=password&username=bwayne&password=wayne&client_id=library-client&client_secret=9584640c-3804-4dcd-997b-93593cfb9ea7" http://localhost:8080/auth/realms/workshop/protocol/openid-connect/token
+POST http://localhost:8080/auth/realms/workshop/protocol/openid-connect/token
+Content-Type: application/x-www-form-urlencoded
+
+grant_type=password&username=bwayne&password=wayne&client_id=library-client&client_secret=9584640c-3804-4dcd-997b-93593cfb9ea7
+
+###
+
