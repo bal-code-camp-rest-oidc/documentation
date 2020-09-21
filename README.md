@@ -1,6 +1,7 @@
 # OIDC Workshop
 
 - We want to do the tutorial [oidc-workshop](https://github.com/andifalk/secure-oauth2-oidc-workshop)
+- The [slides](https://andifalk.github.io/oidc-workshop-spring-io-2019/#/) contains the corresponding theory.
 - We want to do it local first.
 - If it works we will deploy it on openshift.
 
