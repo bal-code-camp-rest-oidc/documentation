@@ -39,5 +39,5 @@ The nonce parameter value needs to include per-session state and be unguessable 
 
 ## Lab 3
 
-In lab 3 we learned how we can access a ressource server with a standalone client (in our case a spring batch). Here we are using the [OAuth2 client credentials grant flow](https://tools.ietf.org/html/rfc6749#section-4.4). To get the token you need to register the client in the keycloak. 
+In lab 3 we learned how we can access a ressource server with a standalone client (in our case a spring batch). Here we are using the [OAuth2 client credentials grant flow](https://tools.ietf.org/html/rfc6749#section-4.4) to get the token you need to register the client in the keycloak. 
 
