@@ -64,8 +64,8 @@ Aren’t Composite Roles also similar to Groups? Logically they provide the same
 | Term            | Description                                                                                                                                                                                 |
 |-----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | jwt             | JSON Web Token                                                                                                                                                                              |
+| OAUTH           | Open Authorization, Protocol specified in [RFC 6749](https://tools.ietf.org/html/rfc6749)                                                                                                   |
 | OIDC            | Open ID Connect – OAUTH Standard                                                                                                                                                            |
-| OAUTH           | Authorization Protocol                                                                                                                                                                      |
 | Authentication  | Authentication is the act of validating that users are who they claim to be                                                                                                                 |
 | Authorisation   | Authorization in system security is the process of giving the user permission to access a specific resource or function                                                                     |
 | Pkce (pixie)    | Proof Key for Code Exchange                                                                                                                                                                 |
