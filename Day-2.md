@@ -30,3 +30,10 @@ The Authz Server publishes the supported methods under the key `code_challenge_m
 ## Discussion points
 
 Why are we using statefull session for client?
+
+## Nonce parameter
+
+Documentation of [auth parameters](https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest)
+
+The nonce parameter value needs to include per-session state and be unguessable to attackers. One method to achieve this for Web Server Clients is to store a cryptographically random value as an HttpOnly session cookie and use a cryptographic hash of the value as the nonce parameter. In that case, the nonce in the returned ID Token is compared to the hash of the session cookie to detect ID Token replay by third parties. A related method applicable to JavaScript Clients is to store the cryptographically random value in HTML5 local storage and use a cryptographic hash of this value.
+
