@@ -37,3 +37,7 @@ Documentation of [auth parameters](https://openid.net/specs/openid-connect-core-
 
 The nonce parameter value needs to include per-session state and be unguessable to attackers. One method to achieve this for Web Server Clients is to store a cryptographically random value as an HttpOnly session cookie and use a cryptographic hash of the value as the nonce parameter. In that case, the nonce in the returned ID Token is compared to the hash of the session cookie to detect ID Token replay by third parties. A related method applicable to JavaScript Clients is to store the cryptographically random value in HTML5 local storage and use a cryptographic hash of this value.
 
+## Lab 3
+
+In lab 3 we learned how we can access a ressource server with a standalone client (in our case a spring batch). Here we are using the [OAuth2 client credentials grant flow](https://tools.ietf.org/html/rfc6749#section-4.4). To get the token you need to register the client in the keycloak. 
+
