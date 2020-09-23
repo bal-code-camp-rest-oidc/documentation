@@ -1,0 +1,10 @@
+## Keycloak
+### Groups vs. Roles
+In the IT world the concepts of Group and Role are often blurred and interchangeable. In keycloak, Groups are just a
+collection of users that you can apply roles and attributes to in one place. Roles define a type of user and
+applications assign permission and access control to roles.
+
+Arn’t Composite Roles also similar to Groups? Logically they provide the same exact functionality, but the difference
+is conceptual. Composite roles should be used to apply the permission model to your set of services and applications.
+Groups should focus on collections of users and their roles in your organization. Use groups to manage users. Use
+composite roles to manage applications and services.
