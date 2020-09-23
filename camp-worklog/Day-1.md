@@ -1,12 +1,9 @@
 # First steps
-
 ## Intro Labs
-
 ### Auth-Code Demo
-
 We could setup local Keycloak based on docker.
 The demo showed us the [RFC 7517](https://tools.ietf.org/html/rfc7517), how the user goes through the different stages
-from client to the auth-provider, getting a authentication-token, back to the client, requesting the access-token,
+from client to the auth-provider, getting an authentication-token, back to the client, requesting the access-token,
 where we were able to call our backend-system.
 
 ```
@@ -38,11 +35,10 @@ where we were able to call our backend-system.
 ```
 
 ### Github Client
-
 In this exercise, we could authenticate by our Github-Account.
 We created in the github-account of our organization a new OAuth-App.
-Then we placed the generated client-id and client-secret in to to
-application.yaml.
+Then we placed the generated client-id and client-secret into
+`application.yaml`.
 Then, we tried to enhance the list of available Authentication-Providers with
 the gitlab account.
 
@@ -66,9 +62,7 @@ the gitlab account.
 ![](./img/github-client/08-github-success.png)
 
 ## Lab 1
-
 ### Implement an OAuth2/OIDC resource server
-
 Spring Security maps these scopes to the Spring Security authorities `SCOPE_library_admin`, `SCOPE_email` and
 `SCOPE_profile` by default.  
 @PreAuthorize("hasRole('LIBRARY_ADMIN') || hasAuthority('SCOPE_library_admin')")
@@ -79,14 +73,13 @@ Discussion about @PreAuthorize vs @Secured or @RolesAllowed as described at
 ![](./img/lab-1/01-keycloak-library-service.png)
 
 ## Lab 2
-
 ### Provide Correct Logout
 In Lab 2 we had a special task: we wanted to implement logout properly, so that we 
 sign-off using keycloak. The commits describing the code changes in the oidc tutorial
 can be found at https://github.com/bal-code-camp-rest-oidc/secure-oauth2-oidc-workshop/commit/08fd4fe572f0b881fa575e01d375da11edd4909b.
 
-Additionally we have to ensure that our redirect URL in the code is a valid redirect URL:
+Additionally, we have to ensure that our redirect URL in the code is a valid redirect URL:
 ![](./img/lab-2/01-keycloak-logout-valid-redirect-url.png)
-### Glossary
 
+### Glossary
 [JWK](https://tools.ietf.org/html/rfc7517)

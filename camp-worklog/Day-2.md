@@ -1,9 +1,6 @@
 # Second day
-
 ## Lab 2
-
 ### PKCE workflow
-
 The PKCE addition is needed to prevent the authorization code interception attack. It adds a challenged key and method
 to the authorization request. If the client requests for access token it adds the key to challenge. So the authz server
 can compare the challenged key and the key to challenge (with challenge method).
@@ -31,11 +28,9 @@ in [the open id-configuration](http://localhost:8080/auth/realms/workshop/.well-
 ```
 
 ## Discussion points
-
 Why are we using stateful session for client?
 
 ## Nonce parameter
-
 Documentation of [auth parameters](https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest)
 
 The nonce parameter value needs to include per-session state and be unguessable to attackers. One method to achieve
@@ -45,7 +40,6 @@ to the hash of the session cookie to detect ID Token replay by third parties. A 
 Clients is to store the cryptographically random value in HTML5 local storage and use a cryptographic hash of this value.
 
 ## Lab 3
-
 In lab 3 we learned how we can access a resource server with a standalone client (in our case a spring batch). Here we
 are using the [OAuth2 client credentials grant flow](https://tools.ietf.org/html/rfc6749#section-4.4) to get the token
 you need to register the client in the keycloak. 
