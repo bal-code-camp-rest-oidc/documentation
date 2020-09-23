@@ -16,6 +16,7 @@
 - [Day 0 - Preparation](./camp-worklog/Day-0.md)
 - [Day 1 - Intro Lab, Lab 1 and 2](./camp-worklog/Day-1.md)
 - [Day 2 - Lab 3 - 6](./camp-worklog/Day-2.md)
+- [Day 3 - Openshift-Deployment](./camp-worklog/Day-3.md)
 
 # Keycloak Administration
 - [Creating New Client](./keycloak-admin/new-client.md)
