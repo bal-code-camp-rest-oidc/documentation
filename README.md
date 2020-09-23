@@ -13,6 +13,16 @@
 - complete [Springboot tutorials by Joachim Prinzbach](https://confluence.baloisenet.com/atlassian/pages/viewpage.action?pageId=1840186564)
 - Perfom steps for [tutorial pre-requisites](https://andifalk.gitbook.io/openid-connect-workshop/introduction/setup)
 
+## Camp Worklog
+
+- [Day 0 - Preparation](./camp-worklog/Day-0.md)
+- [Day 1 - Intro Lab, Lab 1 and 2](./camp-worklog/Day-1.md)
+- [Day 2 - Lab 3 - 6](./camp-worklog/Day-2.md)
+
+## Keycloak Administration
+
+[continue here ...](./keycloak-admin/README.md)
+
 ## OAUTH 2.0 and OIDC
 ### OAUTH 2.0
 OAuth 2.0 is the industry-standard protocol for authorization. OAuth 2.0 focuses on client developer simplicity while
