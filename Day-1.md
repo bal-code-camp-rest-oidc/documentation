@@ -5,7 +5,10 @@
 ### Auth-Code Demo
 
 We could setup local Keycloak based on docker.
-The demo showed us the https://tools.ietf.org/html/rfc7517, how the user goes through the different stages from client to the auth-provider, getting a authentication-token, back to the client, requesting the access-token, where we were able to call our backend-system.
+The demo showed us the [RFC 7517](https://tools.ietf.org/html/rfc7517), how the user goes through the different stages
+from client to the auth-provider, getting a authentication-token, back to the client, requesting the access-token,
+where we were able to call our backend-system.
+
 ```
      +----------+
      | Resource |
@@ -38,7 +41,7 @@ The demo showed us the https://tools.ietf.org/html/rfc7517, how the user goes th
 
 In this exercise, we could authenticate by our Github-Account.
 We created in the github-account of our organization a new OAuth-App.
-Then we placed the gererated client-id and client-secret in to to
+Then we placed the generated client-id and client-secret in to to
 application.yaml.
 Then, we tried to enhance the list of available Authentication-Providers with
 the gitlab account.
@@ -47,9 +50,11 @@ the gitlab account.
 
 ### Implement an OAuth2/OIDC resource server
 
-Spring Security maps these scopes to the Spring Security authorities _SCOPE_library_admin_, _SCOPE_email_ and _SCOPE_profile_ by default.  
+Spring Security maps these scopes to the Spring Security authorities `SCOPE_library_admin`, `SCOPE_email` and
+`SCOPE_profile` by default.  
 @PreAuthorize("hasRole('LIBRARY_ADMIN') || hasAuthority('SCOPE_library_admin')")
-Discussion about @PreAuthorize vs @Secured or @RolesAllowed as described at [Baeldung](https://www.baeldung.com/spring-security-method-security)
+Discussion about @PreAuthorize vs @Secured or @RolesAllowed as described at
+[Baeldung](https://www.baeldung.com/spring-security-method-security)
 
 ### Glossary
 

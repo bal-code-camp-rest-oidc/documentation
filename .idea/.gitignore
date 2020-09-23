@@ -32,3 +32,19 @@ out/
 bin/
 .vscode/
 /baloise/docker-compose/mysql/data/
+
+# Default ignored files
+/shelf/
+/workspace.xml
+# Datasource local storage ignored files
+/dataSources/
+/dataSources.local.xml
+# Editor-based HTTP Client requests
+/httpRequests/
+
+Idea stuff
+*.iml
+misc.xml
+modules.xml
+vcs.xml
+>>>>>>> origin/master
