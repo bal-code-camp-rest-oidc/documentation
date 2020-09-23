@@ -21,11 +21,12 @@
 
 ## Keycloak Administration
 
-[continue here ...](./keycloak-admin/README.md)
+- [Creating New Client](./keycloak-admin/new-client.md)
+- [Adding Identity Provider](./keycloak-admin/idenity-provider.md)
 
 # Fundamentals
 
-- [OAUTH 2.0 and OIDC](fundamentals/oauth-and-oidc.md)
-- [Token Basics (Basic, Digest and Bearer)](fundamentals/token-basics.md)
+- [OAUTH 2.0 and OIDC](./fundamentals/oauth-and-oidc.md)
+- [Token Basics (Basic, Digest and Bearer)](./fundamentals/token-basics.md)
 - [Keycloak](./fundamentals/keycloak.md)
 - [Glossary](./fundamentals/glossary.md)
