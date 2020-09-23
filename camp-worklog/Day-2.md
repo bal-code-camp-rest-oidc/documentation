@@ -2,9 +2,9 @@
 
 ## Lab 2
 
-### PCME workflow
+### PKCE workflow
 
-The PCME addition is needed to prevent the authorization code interception attack. It adds a challenged key and method
+The PKCE addition is needed to prevent the authorization code interception attack. It adds a challenged key and method
 to the authorization request. If the client requests for access token it adds the key to challenge. So the authz server
 can compare the challenged key and the key to challenge (with challenge method).
 
