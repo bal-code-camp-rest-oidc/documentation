@@ -21,7 +21,7 @@ For our CodeCamp, we stopped to configure the realm by gitops/scirpt-based, and
 imported the given realm-config from the workshop through the KeyCloak UI Import-Feature.
 
 
-## Provide dockerized Images
+## Provide dockerized images
 
 ### Github Actions
 We wanted to build an image to deploy our library server to openshift. To do this we decided to use the new github actions instead of travis. To build the image we decided to use native [gradle bootBuildImage task](https://spring.io/guides/gs/spring-boot-docker/). To enable the right docker image name we need to add the following lines to build.gradle:
@@ -31,7 +31,7 @@ bootBuildImage{
 }
 ```
 
-We searched for a Action that pushes only the builded image, but all availlable
+We searched for an action that pushes the builded image only. All available
 Github-Actions in the Marketplace managed both (build & push) in one atomic step.
 
 Our soultion now is motivated by [www.prestonlamb.com/blog](https://www.prestonlamb.com/blog/creating-a-docker-image-with-github-actions), where all plain docker-commands are scripted straight forward as Github-Action-Steps.
@@ -50,7 +50,7 @@ spring:
           issuer-uri: ${ISSUER_URI}
 ```
 
-After that change we are able to parametrize our keycloak uris from the openshift-instance, starting the local dockerized server-instnance to test
+After that change we are able to parametrize our keycloak uris from the openshift-instance, starting the local dockerized server-instance to test
 the new substituted env-variables:
 
 ```bash
@@ -120,7 +120,7 @@ library-server:
 ### Library-Client
 
 The Client provides its endpoint as public [Client Entrypoint-URL](https://bvcc2020-library-client.apps.baloise.dev/library-client/).
-It has configured the urls to integrate the keycloak and backend-server, deployed in the same OpenShift-Namespace. The backend-server is routed direct via service instead of routed via the OpenShift Loadbalancer.
+It has configured the urls to integrate the keycloak and backend-server, deployed in the same OpenShift-Namespace. The backend-server is routed directly via service instead of routed via the OpenShift Loadbalancer.
 
 ```yaml
 library-client:
