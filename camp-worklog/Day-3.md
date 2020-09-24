@@ -27,26 +27,26 @@ spec:
   externalAccess:
     enabled: true
   instances: 1
+```
+
+## Issues
+
+### Openshift restarts Keycloak during pod-startup
+
+We had to specify the required resources:
+```yaml
+...
+spec:
+  ...
   keycloakDeploymentSpec:
     resources:
       requests:
-        cpu: 500m
+        cpu: "1"
         memory: 2Gi
 ```
 
-Route specification:
+### Non-automated configuration over OpenShift UI
 
-```yaml
-spec:
-  host: keycloak-okd4-sampleconfig.apps.okd.baloise.dev
-  to:
-    kind: Service
-    name: keycloak
-    weight: 100
-  port:
-    targetPort: keycloak
-  tls:
-    termination: reencrypt
-  wildcardPolicy: None
-```
-
+We preferred the gitops-way and added the initial `keycloak.yaml`
+in our gitops repository `okd4-appconfig`. This way, the complete
+Keycloak setup was specified and synced by ArgoCD.
