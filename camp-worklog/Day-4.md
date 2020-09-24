@@ -21,7 +21,7 @@ For our CodeCamp, we stopped to configure the realm by gitops/scirpt-based, and
 imported the given realm-config from the workshop through the KeyCloak UI Import-Feature.
 
 
-## Server deploy in openshift
+## Provide dockerized Images
 
 ### Github Actions
 We wanted to build an image to deploy our library server to openshift. To do this we decided to use the new github actions instead of travis. To build the image we decided to use native [gradle bootBuildImage task](https://spring.io/guides/gs/spring-boot-docker/). To enable the right docker image name we need to add the following lines to build.gradle:
@@ -62,3 +62,82 @@ docker run \
 
 ```
 We could use the postman-testcases to authenticate on keykloak in openshift (getting the access-token) and calling the rest-api in the dockerized backend-server.
+
+The same tasks we applied to the library-client implementation of lab2.
+
+### Completed Image builds available via docker.io
+
+After the Github-Actions finished successfully, the built images are pushed into our docker.io repo [luechtdiode/oidc-ws-library-server](https://hub.docker.com/repository/docker/luechtdiode/oidc-ws-library-server) and [luechtdiode/oidc-ws-library-client](https://hub.docker.com/repository/docker/luechtdiode/oidc-ws-library-client).
+
+## Deploy via ArgoCD
+
+The deployment in OpenShift is made by gitops, managed by ArgoCd.
+Our gitops-repo is located at [okd4-sampleconfig](https://github.com/bal-code-camp-rest-oidc/okd4-appconfig/tree/master/okd4-sampleconfig).
+
+In our Chart/Values yamls, we added two new Applications:
+1. library-server
+2. library-client
+
+### New Helm-Chart Dependencies
+```yaml
+...
+dependencies:
+...
+  - name: generic-chart
+    version: 2.0.0
+    repository: https://registry.baloise.dev/chartrepo/library
+    alias: library-server
+  - name: generic-chart
+    version: 2.0.0
+    repository: https://registry.baloise.dev/chartrepo/library
+    alias: library-client
+```
+
+### Library-Server
+
+The Server provides its endpoint as service and also as public [Server Entrypoint-URL](bvcc2020-library-server.apps.baloise.dev/library-server).
+It has configured the urls to integrate the keycloak, deployed in the same
+OpenShift-Namespace.
+
+```yaml
+library-server:
+  image:
+    repository: luechtdiode/oidc-ws-library-server
+    tag: d2df9d37b50ae7d37727417938b11fde5b7d8745
+  replicaCount: 1
+  network:
+    http:
+      servicePort: 9091
+      ingress:
+        host: bvcc2020-library-server.apps.baloise.dev
+  env:
+  - name: JWK_SET_URI
+    value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop/protocol/openid-connect/certs
+  - name: ISSUER_URI
+    value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop
+```
+
+### Library-Client
+
+The Client provides its endpoint as public [Client Entrypoint-URL](bvcc2020-library-client.apps.baloise.dev/library-client).
+It has configured the urls to integrate the keycloak and backend-server, deployed in the same OpenShift-Namespace. The backend-server is routed direct via service instead of routed via the OpenShift Loadbalancer.
+
+```yaml
+library-client:
+  image:
+    repository: luechtdiode/oidc-ws-library-client
+    tag: a021cc8ed987705ff38c78ea14b54c316d8c9aad
+  replicaCount: 1
+  network:
+    http:
+      servicePort: 9090
+      ingress:
+        host: bvcc2020-library-client.apps.baloise.dev
+  env:
+  - name: CLIENT_ID
+    value: library-client-pkce
+  - name: ISSUER_URI
+    value: https://keycloak-okd4-sampleconfig.apps.okd.baloise.dev/auth/realms/workshop
+  - name: SERVER_URL
+    value: http://library-server:9091/library-server
+```
