@@ -6,6 +6,7 @@ The docker compose file ```oidc-application-client/docker-compose-setup/docker-c
 - OIDC: Keycloak
 - DBMS: mysql
 - LDAP-Server: ApacheDS
+- LDAP-Client: Apache Directory Studio
 
 ## Create User Federation
 As a first step you create your new user federation:
@@ -55,3 +56,27 @@ On the concrete user federation you can finally synchronize:
 
 Additionally you can clean up by:
 - removing all imported
+
+Now using [Apache Directory Studio](https://directory.apache.org/studio/) you can see (and modify) your LDAP entries:
+
+1. First of all you have to add a new connection to your localhost. This time we do not use "apacheds" as you access
+   the system from your host system (and thus the port is already exported).
+![](./img/user-federation/05-apacheds-connection.png)
+
+1. As credentials use the DN of the admin user ```uid=admin,ou=system``` and the default password ```secret```.
+![](./img/user-federation/06-apacheds-connection-auth.png)
+
+1. No create a new user "Tony Stark", change his password to "stark":
+![](./img/user-federation/07-apacheds-new-user.png)
+
+1. Finally you can assign this new user to the ```library_curator``` group:
+![](./img/user-federation/08-apacheds-group-assign.png)
+
+Finally, you can again remove/ synch in keycloak, and your new user should exist in teh correct groups/ roles:
+![](./img/user-federation/09-kecloak-new-user.png)
+
+The role should be the same as provided in LDAP:
+![](./img/user-federation/10-keycloak-new-user-role.png)
+
+The group should also  be the same as provided in LDAP:
+![](./img/user-federation/11-keycloak-new-user-group.png)
