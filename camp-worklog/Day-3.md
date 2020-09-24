@@ -14,6 +14,8 @@ You can install the following components:
 We start with installing a keycloak instance:
 ![operator3](img/keycloak-operator-3.png)
 
+A good point to start with sample configurations is on the [github operator repository](https://github.com/keycloak/keycloak-operator/tree/master/deploy/examples). You can copy the examples for an easy start.
+
 We end up with the following yaml configuration:
 ```yaml
 apiVersion: keycloak.org/v1alpha1
