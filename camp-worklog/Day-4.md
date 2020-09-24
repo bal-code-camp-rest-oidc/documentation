@@ -95,7 +95,7 @@ dependencies:
 
 ### Library-Server
 
-The Server provides its endpoint as service and also as public [Server Entrypoint-URL](bvcc2020-library-server.apps.baloise.dev/library-server).
+The Server provides its endpoint as service and also as public [Server Entrypoint-URL](https://bvcc2020-library-server.apps.baloise.dev/library-server).
 It has configured the urls to integrate the keycloak, deployed in the same
 OpenShift-Namespace.
 
@@ -119,7 +119,7 @@ library-server:
 
 ### Library-Client
 
-The Client provides its endpoint as public [Client Entrypoint-URL](bvcc2020-library-client.apps.baloise.dev/library-client).
+The Client provides its endpoint as public [Client Entrypoint-URL](https://bvcc2020-library-client.apps.baloise.dev/library-client/).
 It has configured the urls to integrate the keycloak and backend-server, deployed in the same OpenShift-Namespace. The backend-server is routed direct via service instead of routed via the OpenShift Loadbalancer.
 
 ```yaml
