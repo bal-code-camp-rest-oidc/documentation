@@ -33,7 +33,9 @@ spec:
 
 ### Openshift restarts Keycloak during pod-startup
 
-We had to specify the required resources:
+Because of the default resources for the keycloak container, the liveness and readiness probes failed on startup. For this reason we needed to increase the deployment resources.
+
+So we added the following request resources:
 ```yaml
 ...
 spec:
