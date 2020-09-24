@@ -71,7 +71,7 @@ After the Github-Actions finished successfully, the built images are pushed into
 
 ## Deploy via ArgoCD
 
-The deployment in OpenShift is made by gitops, managed by ArgoCd.
+The deployment in OpenShift is made by gitops, managed by [ArgoCd](https://argocd.baloise.dev/applications/okd4-sampleconfig?operation=false).
 Our gitops-repo is located at [okd4-sampleconfig](https://github.com/bal-code-camp-rest-oidc/okd4-appconfig/tree/master/okd4-sampleconfig).
 
 In our Chart/Values yamls, we added two new Applications:
