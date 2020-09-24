@@ -1,9 +1,12 @@
 # Fourth day
 
+
 ## Keycloak Realm Openshift
 The realm configuration of keycloak operator is limited. The following configurations are available:
 
 ![Realm-Sections](img/realm-1.png)
+
+We tried to convert the given keycloak-json-configuration to yaml with the [Json2Yaml](https://www.json2yaml.com/).
 
 We could not use it for our purpose, as we should also configure realm specific
 roles, which are not supported.
