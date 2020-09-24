@@ -23,6 +23,7 @@
 - [Creating New Client](./keycloak-admin/new-client.md)
 - [Adding Identity Provider](./keycloak-admin/idenity-provider.md)
 - [Keycloak Admin API](./keycloak-admin/admin-client-api.md)
+- [User Federation](./keycloak-admin/new-user-federation.md)
 
 # Fundamentals
 - [OAUTH 2.0 and OIDC](./fundamentals/oauth-and-oidc.md)
