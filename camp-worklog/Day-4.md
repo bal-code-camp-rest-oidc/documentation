@@ -4,7 +4,7 @@ On the fourth day we separated development efforts in two teams:
 - one team started a new sample application
 - the other team kept on focusing on deployment
 
-Additionally and as a special highlight we **integrated the CaTs-Team** (another code camp solution, see XXXX)
+Additionally and as a special highlight we **integrated the CaTs-Team** (another code camp solution, see https://github.com/baloise/codes-and-texts/tree/feature/keycloak-authentication)
 solution now using keycloak as well. 
 
 ## New Sample Application
