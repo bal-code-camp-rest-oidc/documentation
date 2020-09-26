@@ -56,4 +56,4 @@ In this lab we implemented a custom mapping and some unit and integration tests 
 In this lab we implemented OAuth2/OIDC tests using own self-signed JWT (instead of keycloak) tokens which makes testing much easier.
 
 ## Lab 6
-In this lab we 
+In this lab we added an Angular client using our OAuth2/ OIDC infrastructure.

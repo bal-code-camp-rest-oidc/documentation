@@ -27,6 +27,7 @@
 - [User Federation](./keycloak-admin/new-user-federation.md)
 
 # Fundamentals
+- [Recommended Practices for API Access Management](https://console-openshift-console.apps.okd.baloise.dev)
 - [OAUTH 2.0 and OIDC](./fundamentals/oauth-and-oidc.md)
 - [Token Basics (Basic, Digest and Bearer)](./fundamentals/token-basics.md)
 - [Keycloak](./fundamentals/keycloak.md)

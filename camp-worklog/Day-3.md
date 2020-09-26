@@ -12,7 +12,8 @@ as well as creating clinets, roles, groups etc. for self-service tasks.
 
 ## Keycloak Operator Openshift
 
-To install the operator you need to go to the operator -> operator hub section in the openshift console. There you will find a keycloak operator.
+To install the operator you need to go to the operator -> operator hub section in the openshift console
+(https://console-openshift-console.apps.okd.baloise.dev). There you will find a keycloak operator.
 
 ![operator1](img/keycloak-operator-1.png)
 
