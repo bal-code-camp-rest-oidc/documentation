@@ -16,8 +16,9 @@
 - [Day 0 - Preparation](./camp-worklog/Day-0.md)
 - [Day 1 - Intro Lab, Lab 1 and 2](./camp-worklog/Day-1.md)
 - [Day 2 - Lab 3 - 6](./camp-worklog/Day-2.md)
-- [Day 3 - Openshift-Deployment](./camp-worklog/Day-3.md)
-- [Day 4 - Openshift-Config](./camp-worklog/Day-4.md)
+- [Day 3 - Openshift-Deployment/ Keycloak Admin API](./camp-worklog/Day-3.md)
+- [Day 4 - Openshift-Config/ Sample Apüplication](./camp-worklog/Day-4.md)
+- [Day 5 - Sample Application/ Swagger](./camp-worklog/Day-5.md)
 
 # Keycloak Administration
 - [Creating New Client](./keycloak-admin/new-client.md)
@@ -30,3 +31,6 @@
 - [Token Basics (Basic, Digest and Bearer)](./fundamentals/token-basics.md)
 - [Keycloak](./fundamentals/keycloak.md)
 - [Glossary](./fundamentals/glossary.md)
+
+# Open Issues/ Next Steps
+- Why are we using stateful sessions in PKCE example (Lab 2)? 

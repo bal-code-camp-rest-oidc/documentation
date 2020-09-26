@@ -1,6 +1,11 @@
-# Second day
+# Second Day, 22.09.2020
+
+On that second day we focused on finishing the labs (https://github.com/andifalk/secure-oauth2-oidc-workshop).
+
 ## Lab 2
-### PKCE workflow
+
+### PKCE Workflow
+
 The PKCE addition is needed to prevent the authorization code interception attack. It adds a challenged key and method
 to the authorization request. If the client requests for access token it adds the key to challenge. So the authz server
 can compare the challenged key and the key to challenge (with challenge method).
@@ -27,10 +32,10 @@ in [the open id-configuration](http://localhost:8080/auth/realms/workshop/.well-
                                                  +-------------------+
 ```
 
-## Discussion points
+## Discussion Points
 Why are we using stateful session for client?
 
-## Nonce parameter
+## Nonce Parameter
 Documentation of [auth parameters](https://openid.net/specs/openid-connect-core-1_0.html#AuthRequest)
 
 The nonce parameter value needs to include per-session state and be unguessable to attackers. One method to achieve
@@ -44,3 +49,11 @@ In lab 3 we learned how we can access a resource server with a standalone client
 are using the [OAuth2 client credentials grant flow](https://tools.ietf.org/html/rfc6749#section-4.4) to get the token
 you need to register the client in the keycloak. 
 
+## Lab 4
+In this lab we implemented a custom mapping and some unit and integration tests using Mockito as well as SpringBoot tests.
+
+## Lab 5
+In this lab we implemented OAuth2/OIDC tests using own self-signed JWT (instead of keycloak) tokens which makes testing much easier.
+
+## Lab 6
+In this lab we 

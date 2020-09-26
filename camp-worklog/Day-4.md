@@ -1,5 +1,21 @@
-# Fourth day
+# Fourth Day, 24.09.2020
 
+On the fourth day we separated development efforts in two teams:
+- one team started a new sample application
+- the other team kept on focusing on deployment
+
+Additionally and as a special highlight we **integrated the CaTs-Team** (another code camp solution, see XXXX)
+solution now using keycloak as well. 
+
+## New Sample Application
+The new sample application was intended to be based on the following ideas:
+- use the library server code as much as possible (from security tutorial)
+- optimize that code as far as possible from a business and lean API perspective
+- use OAuth2/OIDC with PKCE
+- build and deploy that application using Github/ Openshift
+- use keycloak for any security relevant tasks
+
+The application's sources can be found at https://github.com/bal-code-camp-rest-oidc/oidc-application-client.
 
 ## Keycloak Realm Openshift
 The realm configuration of keycloak operator is limited. The following configurations are available:
@@ -20,8 +36,7 @@ For this reason we imported the configuration through json import.
 For our CodeCamp, we stopped to configure the realm by gitops/scirpt-based, and
 imported the given realm-config from the workshop through the KeyCloak UI Import-Feature.
 
-
-## Provide dockerized images
+## Provide Dockerized Images
 
 ### Github Actions
 We wanted to build an image to deploy our library server to openshift. To do this we decided to use the new github actions instead of travis. To build the image we decided to use native [gradle bootBuildImage task](https://spring.io/guides/gs/spring-boot-docker/). To enable the right docker image name we need to add the following lines to build.gradle:
@@ -36,7 +51,7 @@ Github-Actions in the Marketplace managed both (build & push) in one atomic step
 
 Our soultion now is motivated by [www.prestonlamb.com/blog](https://www.prestonlamb.com/blog/creating-a-docker-image-with-github-actions), where all plain docker-commands are scripted straight forward as Github-Action-Steps.
 
-### Env Variables
+### Environment Variables
 To pass keycloak parameters to our new docker image, we substituted our hard-coded values with environment variables. 
 
 ```yaml
@@ -50,7 +65,7 @@ spring:
           issuer-uri: ${ISSUER_URI}
 ```
 
-After that change we are able to parametrize our keycloak uris from the openshift-instance, starting the local dockerized server-instance to test
+After that change we are able to parametrize our keycloak URIs from the openshift-instance, starting the local dockerized server-instance to test
 the new substituted env-variables:
 
 ```bash
@@ -61,15 +76,15 @@ docker run \
     realms/workshop docker.io/luechtdiode/oidc-ws-library-server:latest
 
 ```
-We could use the postman-testcases to authenticate on keykloak in openshift (getting the access-token) and calling the rest-api in the dockerized backend-server.
+We could use the postman-testcases to authenticate on keykloak in openshift (getting the access-token) and calling the REST-API in the dockerized backend-server.
 
 The same tasks we applied to the library-client implementation of lab2.
 
-### Completed Image builds available via docker.io
+### Completed Image Builds Available Via docker.io
 
 After the Github-Actions finished successfully, the built images are pushed into our docker.io repo [luechtdiode/oidc-ws-library-server](https://hub.docker.com/repository/docker/luechtdiode/oidc-ws-library-server) and [luechtdiode/oidc-ws-library-client](https://hub.docker.com/repository/docker/luechtdiode/oidc-ws-library-client).
 
-## Deploy via ArgoCD
+## Deploy Via ArgoCD
 
 The deployment in OpenShift is made by gitops, managed by [ArgoCd](https://argocd.baloise.dev/applications/okd4-sampleconfig?operation=false).
 Our gitops-repo is located at [okd4-sampleconfig](https://github.com/bal-code-camp-rest-oidc/okd4-appconfig/tree/master/okd4-sampleconfig).

@@ -1,5 +1,10 @@
-# First steps
+# First Day, 21.09.2020
+
+The first two days (as it turned out earlier than expected) we studied the security
+tutorial as it can be found at https://github.com/andifalk/secure-oauth2-oidc-workshop.
+
 ## Intro Labs
+
 ### Auth-Code Demo
 We could setup local Keycloak based on docker.
 The demo showed us the [RFC 7517](https://tools.ietf.org/html/rfc7517), how the user goes through the different stages
@@ -62,7 +67,7 @@ the gitlab account.
 ![](./img/github-client/08-github-success.png)
 
 ## Lab 1
-### Implement an OAuth2/OIDC resource server
+### Implement an OAuth2/OIDC Resource Server
 Spring Security maps these scopes to the Spring Security authorities `SCOPE_library_admin`, `SCOPE_email` and
 `SCOPE_profile` by default.  
 @PreAuthorize("hasRole('LIBRARY_ADMIN') || hasAuthority('SCOPE_library_admin')")
