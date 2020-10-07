@@ -3,12 +3,16 @@
 On this day we had only half of a day as we planned a social event (hiking, spa, beer)
 in the afternoon. Therefore we also started seperating us into two teams:
 - Keycloak Admin API
+- Extended Docker Image
 - build and delpoyment on Openshift 
 
 ## Keycloak Admin API
 One team was interested in using a Java API to access keycloak
 from an admin perspective: this should help us requesting users and roles
 as well as creating clinets, roles, groups etc. for self-service tasks.
+
+## Extended Docker Image
+Also on this third day we worked on the docker image.
 
 ## Keycloak Operator Openshift
 
