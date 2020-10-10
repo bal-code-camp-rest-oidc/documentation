@@ -17,7 +17,7 @@
 - [Day 1 - Intro Lab, Lab 1 and 2](./camp-worklog/Day-1.md)
 - [Day 2 - Lab 3 - 6](./camp-worklog/Day-2.md)
 - [Day 3 - Openshift-Deployment/ Keycloak Admin API](./camp-worklog/Day-3.md)
-- [Day 4 - Openshift-Config/ Sample Apüplication](./camp-worklog/Day-4.md)
+- [Day 4 - Openshift-Config/ Sample Application](./camp-worklog/Day-4.md)
 - [Day 5 - Sample Application/ Swagger](./camp-worklog/Day-5.md)
 
 # Keycloak Administration
