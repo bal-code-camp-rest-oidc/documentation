@@ -28,6 +28,7 @@
 
 # Fundamentals
 - [Recommended Practices for API Access Management](https://console-openshift-console.apps.okd.baloise.dev)
+- [Diagrams And Movies Of All The OAuth 2.0 Flows](https://medium.com/@darutk/diagrams-and-movies-of-all-the-oauth-2-0-flows-194f3c3ade85)
 - [OAUTH 2.0 and OIDC](./fundamentals/oauth-and-oidc.md)
 - [Token Basics (Basic, Digest and Bearer)](./fundamentals/token-basics.md)
 - [Keycloak](./fundamentals/keycloak.md)
